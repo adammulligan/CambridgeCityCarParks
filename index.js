@@ -52,6 +52,6 @@ MongoClient.connect(MONGO_URL, function(err, db) {
   log.info('Connected to mongo, starting up...');
 
   agenda.define('retrieve parking space data', function(job, callback) { retrieveData(db, callback); });
-  agenda.every('10 seconds', 'retrieve parking space data');
+  agenda.every('5 minutes', 'retrieve parking space data');
   agenda.start();
 });
